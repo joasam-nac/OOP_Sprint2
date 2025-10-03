@@ -34,4 +34,11 @@ public class VäxelTest {
         int[] förväntat = new int[9];
         assertArrayEquals(förväntat, v.getVäxel());
     }
+
+    @Test
+    public void toStringÖverTusenTest(){
+        Växel v = new Växel(1002);
+        String förväntat = "Antal 1000-lappar: 1\nAntal 1-kronor: 2\n";
+        assertEquals(förväntat, v.toString());
+    }
 }
