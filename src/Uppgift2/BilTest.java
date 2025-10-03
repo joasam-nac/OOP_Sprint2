@@ -8,13 +8,13 @@ public class BilTest {
     @Test
     public void getAntalMilTest(){
         Bil bil = new Bil(1000, 500, 200);
-        assertEquals(500, bil.getAntalMil());
+        assertEquals(500, bil.getAntalMil(), 0);
     }
 
     @Test
     public void getFörbrukningTest(){
         Bil bil = new Bil(1000, 500, 200);
-        assertEquals(5/2, bil.getFörbrukning());
+        assertEquals(0.4, bil.getFörbrukning(), 0);
     }
 
     @Test
