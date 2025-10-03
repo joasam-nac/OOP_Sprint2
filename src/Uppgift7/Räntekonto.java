@@ -14,15 +14,19 @@ public class Räntekonto {
     }
 
     private double getRäntaFrånÅr(int årtal){
-        return Math.pow(1+ränta, årtal)*startKapital;
+        if(år == 0){
+            return startKapital;
+        } else {
+            return Math.pow(1 + ränta, årtal) * startKapital;
+        }
     }
 
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder(" År\t    Summa\n----------------");
-        for(int i = 1; i<=år; i++){
+        for(int i = 0; i<=år; i++){
             String årsRänta = String.format(Locale.GERMANY, "%.2f", getRäntaFrånÅr(i));
-            sb.append("\n " + i + "\t  " + årsRänta + " kr");
+            sb.append("\n ").append(i).append("\t  ").append(årsRänta).append(" kr");
         }
         return sb.toString();
     }
